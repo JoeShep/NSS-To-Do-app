@@ -1,6 +1,6 @@
 <h3>Add Task</h3>
 <%= form_for @task do |f| %>
-<%= f.label :title %>
+<%= f.label :title, "Gotta do this: " %>
   <%= f.text_field :title %>
 <%= f.submit "Submit" %>
 <% end %>

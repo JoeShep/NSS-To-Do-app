@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+
   def index
    @tasks = Task.all
   end
@@ -8,8 +9,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.create( params[:task] )
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.create( params[:task] )
     flash[:notice] = "Your task has been added to the list."
-    redirect_to :root
+    redirect_to list_path(@list)
   end
 end

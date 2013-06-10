@@ -8,7 +8,7 @@
   <ul id= "undone">
     <% @list.tasks.not_done.each do |task| %>
     <li>
-      <%= button_to "Done!", complete_task_path(@list.id,task.id) %> <%= task.title %>
+      <%= task.title %> -- <%= button_to "Mark as done", complete_task_path(@list.id,task.id) %>
     </li>
     <% end %>
   </ul>

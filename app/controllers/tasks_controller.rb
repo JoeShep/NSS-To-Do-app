@@ -12,8 +12,13 @@ class TasksController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     @task = @list.tasks.create( params[:task] )
-    flash[:notice] = "Your task has been added to the list."
-    redirect_to list_url(@list)
+    if @task.save
+      flash[:notice] = "Your task has been added to the list."
+      redirect_to list_url(@list)
+    else
+      flash[:error] = "Task not created. Try again."
+      redirect_to new_task_url
+    end
   end
 
   def complete

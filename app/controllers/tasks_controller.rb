@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  attr_accessor :done
 
   def index
    @tasks = Task.all
@@ -12,6 +13,15 @@ class TasksController < ApplicationController
     @list = List.find(params[:list_id])
     @task = @list.tasks.create( params[:task] )
     flash[:notice] = "Your task has been added to the list."
-    redirect_to list_path(@list)
+    redirect_to list_url(@list)
   end
+
+  def complete
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.find(params[:id])
+    @task.done = true
+    @task.save
+  redirect_to list_url(@list)
+  end
+
 end

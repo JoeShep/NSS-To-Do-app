@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(:version => 20130609111300) do
 
   create_table "tasks", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.boolean  "done"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "done",       :default => false
+    t.integer  "list_id"
   end
 
 end

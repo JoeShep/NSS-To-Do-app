@@ -24,11 +24,25 @@ class ListsController < ApplicationController
     @task = @list.tasks.new
   end
 
+  def edit
+    @list = List.find(params[:id])
+  end
+
+  def update
+    @list = List.find(params[:id])
+    if @list.update_attributes(params[:list])
+      flash[:notice] = "#{@list.name} has been updated"
+      redirect_to lists_url
+    else
+      flash[:error] = "List not updated. Try again"
+      redirect_to edit_list_path(@list)
+    end
+  end
+
   def destroy
     @list = List.find(params[:id])
     if @list.destroy
-      flash[:notice] = "#{@list.name
-      } has been deleted"
+      flash[:notice] = "#{@list.name} has been deleted"
       redirect_to lists_url
     else
       flash[:error] = "List not deleted. Try again"

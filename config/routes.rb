@@ -1,7 +1,7 @@
 Todo::Application.routes.draw do
 
   resources :tasks, only: [:index, :new, :create]
-  resources :lists, only: [:index, :new, :create]
+  resources :lists, only: [:index, :new, :create, :edit]
 
   resources :lists do
     resources :tasks

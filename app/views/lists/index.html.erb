@@ -1,11 +1,9 @@
 <h1>My To-Do Lists</h1>
 
   <% @lists.each do |list| %>
-   <h2><li><%= link_to "#{list.name}", list_url(list) %></li></h2>
-   <p><%= list.description %> | <%= link_to "Delete List", list_url(list), :method => :delete %></p>
+   <h2><li><%= link_to "#{list.name}", list_url(list) %></li></h2><em><%= list.description %></em>
+   <p>| <%= link_to "Edit List", edit_list_url(list) %> | <%= link_to "Delete List", list_url(list), :method => :delete %> </p>
 
   <% end %>
 
-
-<%= link_to "Add New Task", new_task_path %>
 <%= link_to "Create New To-Do List", new_list_path %>

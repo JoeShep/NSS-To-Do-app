@@ -1,0 +1,7 @@
+.button_to {
+display: inline-block
+}
+
+#undone {
+ list-style-type: none;
+}

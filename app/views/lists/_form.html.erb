@@ -1,0 +1,7 @@
+<%= form_for @list do |f| %>
+<%= f.label :name, "List Title: " %>
+  <p><%= f.text_field :name %></p>
+<%= f.label :description, "Description: " %>
+  <p><%= f.text_field :description %></p>
+<%= f.submit "Submit" %> <%= button_tag "Cancel",:type => 'button', :onclick => "location.href = '#{lists_url}'" %>
+<% end %>

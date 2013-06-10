@@ -2,6 +2,7 @@
 display: inline-block
 }
 
-#undone {
- list-style-type: none;
+#done {
+  list-style-image:url('../../app/images/check-mark-tiny.gif');
+ list-style-type: circle;
 }

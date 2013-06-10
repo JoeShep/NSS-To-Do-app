@@ -5,15 +5,15 @@
   <% unless @list.tasks.exists? %>
     <p>"Your to-do list is empty. Time to add some stuff!"</p>
   <% else %>
-  <ul id= "undone">
+  <ul>
     <% @list.tasks.not_done.each do |task| %>
     <li>
-      <%= button_to "Done!", complete_task_path(@list.id,task.id) %> <%= task.title %>
+      <%= task.title %> <%= button_to "Mark As Done", complete_task_path(@list.id,task.id) %>
     </li>
     <% end %>
   </ul>
   <h3> Stuff I've crossed off the list:</h3>
-  <ul>
+  <ul id= "done">
     <% @list.tasks.done.each do |task| %>
     <li><%= task.title %></li>
     <% end %>

@@ -7,8 +7,8 @@
   <% else %>
   <ul>
     <% @list.tasks.not_done.each do |task| %>
-    <li>
-      <%= task.title %> <%= button_to "Mark As Done", complete_task_path(@list.id,task.id) %>
+    <li class='tasks'>
+      <%= task.title %> <%= check_box_tag 'done', '', false, { 'data-href' => complete_task_path(@list.id,task.id)} %>
     </li>
     <% end %>
   </ul>

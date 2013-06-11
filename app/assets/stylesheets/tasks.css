@@ -1,0 +1,55 @@
+.button_to {
+display: inline-block
+}
+
+#undone {
+ list-style-type: none;
+}
+
+#index_page {
+  margin: 20px;
+}
+
+#index_header {
+
+}
+
+#index_header, p {
+  font-family: Helvetica;
+}
+
+#index_page li {
+  list-style-type: none;
+  margin-bottom: -20px;
+  padding-top: 5px;
+}
+
+#list_box {
+  background: #C7BDA5;
+  width: 30%;
+  border-radius: 10px;
+  padding-left: 8px;
+}
+
+a:link {
+  text-decoration: none;
+  color: brown;
+}
+
+a:visited {
+  color: brown;
+}
+
+a:hover {
+  color:green;
+}
+
+#buttons {
+  margin-top: -4px;
+}
+
+
+
+
+
+

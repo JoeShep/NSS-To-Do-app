@@ -3,7 +3,7 @@ display: inline-block
 }
 
 #undone {
- list-style-type: none;
+ /*list-style-type: none;*/
 }
 
 #index_page {

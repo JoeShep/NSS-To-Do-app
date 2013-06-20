@@ -2,7 +2,8 @@
 <h1 id="index_header">My To-Do Lists</h1>
 <%= button_to "Create New To-Do List", new_list_path, :method => :get  %>
   <% @lists.each do |list| %>
-   <div id = "list_box"><h2><li><%= link_to "#{list.name}", list_url(list)%></li></h2><em><%= list.description %></em>
+   <div id = "list_box">
+    <h2><li><%= link_to "#{list.name}", list_url(list)%></li></h2><em><%= list.description %></em>
    <p id="buttons">
     <%= button_to "View List", list_url(list), :method => :get %> |
     <%= button_to "Edit List", edit_list_url(list), :method => :get %> |

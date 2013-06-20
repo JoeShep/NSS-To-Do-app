@@ -6,16 +6,21 @@ display: inline-block
  /*list-style-type: none;*/
 }
 
+#done {
+  +filter: Alpha(Opacity=80)
+  color
+}
+
 #index_page {
   margin: 20px;
 }
 
-#index_header {
-
+h1, h2, p, li {
+  font-family: Helvetica;
 }
 
-#index_header, p {
-  font-family: Helvetica;
+.description {
+  margin-top: -15px;
 }
 
 #index_page li {
@@ -47,6 +52,7 @@ a:hover {
 #buttons {
   margin-top: -4px;
 }
+
 
 
 

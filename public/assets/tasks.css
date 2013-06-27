@@ -1,8 +1,0 @@
-.button_to {
-display: inline-block
-}
-
-#done {
-  list-style-image:url('../../app/images/check-mark-tiny.gif');
- list-style-type: circle;
-}

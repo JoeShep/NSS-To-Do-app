@@ -5,4 +5,8 @@ class CreateListsTasksJoinTable < ActiveRecord::Migration
       t.integer :task_id
     end
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> refactor

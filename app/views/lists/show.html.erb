@@ -1,21 +1,22 @@
+
 <%= stylesheet_link_tag "tasks" %>
 
-<h2><%= @list.name + " To-Do List" %></h2>
-<p><em><%= @list.description %></em></p>
+<h1><%= @list.name + " To-Do List" %></h1>
+<p class="description"><em><%= @list.description %></em></p>
   <% unless @list.tasks.exists? %>
     <p>"Your to-do list is empty. Time to add some stuff!"</p>
   <% else %>
   <ul>
     <% @list.tasks.not_done.each do |task| %>
-    <li class='tasks'>
-      <%= task.title %> <%= check_box_tag 'done', '', false, { 'data-href' => complete_task_path(@list.id,task.id)} %>
+    <li>
+      <%= task.title %> -- <%= button_to "Mark as done", complete_task_path(@list.id,task.id) %>
     </li>
     <% end %>
   </ul>
   <h3> Stuff I've crossed off the list:</h3>
   <ul id= "done">
     <% @list.tasks.done.each do |task| %>
-    <li><%= task.title %></li>
+    <li id= "done"><%= task.title %></li>
     <% end %>
   </ul>
   <% end %>
@@ -25,5 +26,5 @@
 <%= f.submit "Submit" %>
 <% end %>
 <br>
-<%= link_to "Back to my list of lists", lists_url %>
-| <%= link_to "Edit List", edit_list_url(@list) %>
+<%= button_to "Back to my list of lists", lists_url, :method => :get %>
+| <%= button_to "Edit List", edit_list_url(@list), :method => :get %>

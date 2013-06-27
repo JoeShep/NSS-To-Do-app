@@ -1,15 +1,5 @@
 <div id="index_page">
 <h1 id="index_header">My To-Do Lists</h1>
-<<<<<<< HEAD
-
-  <% @lists.each do |list| %>
-   <h2><li><%= link_to "#{list.name}", list_url(list) %></li></h2><em><%= list.description %></em>
-   <p>| <%= link_to "Edit List", edit_list_url(list) %> | <%= link_to "Delete List", list_url(list), :method => :delete %> </p>
-
-  <% end %>
-
-<%= link_to "Create New To-Do List", new_list_path %>
-=======
 <%= button_to "Create New To-Do List", new_list_path, :method => :get  %>
   <% @lists.each do |list| %>
    <div id = "list_box">
@@ -21,5 +11,4 @@
   </p>
   </div>
  <% end %>
->>>>>>> refactor
 </div>
